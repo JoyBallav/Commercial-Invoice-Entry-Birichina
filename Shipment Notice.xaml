@@ -1,0 +1,323 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Shipment_Notice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Buyer_Name" Type="InArgument(x:String)" />
+    <x:Property Name="ASN_Type" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Shipment_Notice.Buyer_Name>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Shipment_Notice.Buyer_Name>
+  <this:Shipment_Notice.ASN_Type>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Shipment_Notice.ASN_Type>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1793.33333333333,2484.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Shipment_Notice_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Shipment Notice" sap:VirtualizedContainerService.HintSize="552,2420" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="Article" Name="Select_ASN_For" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On ASN" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f3f2415-c7ee-4463-8d46-34bc10ee62d5" InformativeScreenshot="b8cd95a48d1f32b872569acefa1efe6a" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' parentid='Cell_ShipmentFor' rowName='ASN For[Select]Article' tableCol='1' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Select Article" EmptyField="True" sap:VirtualizedContainerService.HintSize="510,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[ASN_Type+ &quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="89f7224f-86e0-4154-96a7-e26834dd3962" InformativeScreenshot="02b0460abad1db3a5c5051534e37a39d" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Random Click On Buyer to move cursor" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db3e7ffe-0123-4c6f-9f2f-7ca69193fa7b" InformativeScreenshot="e01e5f5a95f6c7a1c487c91c751fc031" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='lblBuyer' tag='SPAN' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On Buyer" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="223ee792-9192-48f9-8cd5-9935c0ab5f4f" InformativeScreenshot="c5a1c08e6ca638493076d12e0bc26045" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlBuyer' tag='SELECT' tableCol='1' parentid='Cell_Buyer' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Input Buyer" EmptyField="True" sap:VirtualizedContainerService.HintSize="510,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[Buyer_Name+ &quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f76c5744-763c-41b4-a620-e022282f03b9" InformativeScreenshot="626a026817fb8da94d8ae4be2fe47c12" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' aria-role='textbox' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On ASN Type" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e234694a-a6da-4f03-9a75-b6ed496c345a" InformativeScreenshot="fa790675db08f720604301b2e16a7e8a" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNType' tag='SELECT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Select ASN Type" sap:VirtualizedContainerService.HintSize="510,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="With GDN[k(enter)]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0848bda-4e41-467c-948c-0e3b6f78e31a" InformativeScreenshot="7154840df2cfe268453ebff0953ba581" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNType' tag='SELECT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: World Fashion Exchange" sap:VirtualizedContainerService.HintSize="510,1222" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="72f13015-1414-47fa-b0b1-4d652bd71585" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1004" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Get_ASN_Against" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSelectItem DisplayName="Select Item 'ASN Against'" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Buyer Order Dispatch" ScopeIdentifier="72f13015-1414-47fa-b0b1-4d652bd71585" Version="V1">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="3">
+                  <x:String>Order</x:String>
+                  <x:String>Buyer Order Dispatch</x:String>
+                  <x:String>Buyer Order Dispatch with Pre shipment Export Invoice</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://sq.worldfashionexchange.com/WFXBase4.0/WFXSalesASN.aspx?GUID=acbd462a-6f45-4642-b2df-ea8cd405fe7b" DesignTimeRectangle="792, 196, 145, 22" ElementType="DropDown" FriendlyName="'Buyer Order Dispatch'" FullSelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' type='' aaname='' /&gt;" Guid="e4d25962-4a5f-442f-a591-fd621cb9e91c" InformativeScreenshot="16774e8da439fbb356049382e0cf0a37.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;" SearchSteps="FuzzySelector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="687, 196, 100, 22" ElementType="Text" FriendlyName="'ASN Against'" FullSelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='lblASNAgainst' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='lblASNAgainst' tag='SPAN' type='' aaname='ASN Against' check:text='ASN Against' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAaCAYAAABb9hlrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQOSURBVGhD7Zets6RGFMXzb+Dixo0bhxyHa4dr2Q6Hw+FWYlJUDBVDraGiiCJVqSIxVK1o2atwOBzy5Fxg3puZ9zbZUY/Z4lSNmObSH/d3P5qfsGvT2gFtXDugjWsHtHHtgDauHdDGtQPauHZAG9cOaON6A2i0FdK0QDesA9Q0dCgTjZN3gIoy1G6SQbR5gqTocDGdhhZ5VsKO68C1ph4N7bPagW8/Ls6d6QiVrP2IphH98N6GnkN3gOj09AzPOyKu+9WRA5pEQSUVOmvRVgVKoTc5FNqjrULeLQ6YXAmjEjRXcC+SZ9qjvcrfB/h/IuCuaeEefHfsMoSmwKNct6JbQEODJDTMIMNMqdDLoeiYKgpgyrvInwGdEYQBzqacHfBtQBNsYRDGGecPka1AZbxvciQmRKgNoihGWln0rkGeRNChRpSuGcn1qrxAO0zcEp9nOX8xjImYxS04TI3oyhSRDmGSAn9++R2p9hlEZ2gTI2/fiZyN6woQnVXHUHEF52rEyqBcw25oUgQHHyarYBdPzA4r6Ni0bpARkmTc+C1Ao0WuNTONWZBrqJQO5fDUV4i4Tt506KoEwTlCaQe4mllad7C2Rcng0IVlpWqRMnhkT5PNoZjlOm/QdTXHFVI6f+S45vpVZ9G1DWzfw1YxgyhF3Tn0402IPYVeATFT6lgtpY39Rcra7Jj18ShRTWd5PytkEokroIzlrm8SqDBD0xbvAho7Ok4vpW2yxexEsRGHhnxPEmqBFaOe05bPepbTupzXDAh0vAN0mY+WLMsKppIA4RxBiKRsCWOe5scpcRMPZw7SU65+YXHXLya40uCseeDxAmj27lwGlTEIgntAdGBGsNfzeifENJrXPHo4KQ0dnJhZDUuVrBHB9xWiJEP6ACBhMFoGEgPt6NOWBj8IoMXxKqGDlgGeVBwSIv/bwVmHpTqwDErJkJ5zDUjMJRvE+X58C4i3r5QACnvx0AJAxTW+/MHMY9bkZYmqYkmS8snMLA0zeZ6EPSUP55L4XYB4Y1v2uYxJBRgE0Ivt82kBNFk2fIXkxrN0Tsbm/ekzftEHeEceWAc4HO5L3OXkcgNkpvi3GTRI+buL4KWcRfj812/QJ2YOG72RuXkjTNuvM5TjieuF0uA9nL8TkPRQX97jvs6+BAUN5OITHNmHNJKXm+nz6CWDBjbUNz10ZH+ZvyH43DGT+HtttBP7xN078s3Rs3Stf0XTSMddLhYvkvUc/vlVI8w6ulg0wvICsfxfnjvH+WUP8yIyxouAmM7riNWiaeAaq804v3d7IZA9yNibbTyBXi8JH6ChzaCOPntEhIhR70vUv2TkLtGHAhJJ9Dt+AFuJ8J3NG304oF3/rR3QxrUD2rh2QBvXDmjj2gFtWsC/4vyGA05ITtQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get ASN Against" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0de59767-ca7f-4fa1-b43b-6ffb2f0febab" InformativeScreenshot="99b1a4e0a27144c30aec084cd624985a" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' tableCol='3' tableRow='1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Get_ASN_Against]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:InterruptibleWhile Condition="[Get_ASN_Against=&quot;Order&quot; Or Get_ASN_Against=&quot;Buyer Order Dispatch with Pre shipment Export Invoice&quot;]" DisplayName="While" sap:VirtualizedContainerService.HintSize="434,565.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,396" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NSelectItem DisplayName="Select Item 'ASN Against'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Buyer Order Dispatch" ScopeIdentifier="72f13015-1414-47fa-b0b1-4d652bd71585" Version="V1">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="3">
+                        <x:String>Order</x:String>
+                        <x:String>Buyer Order Dispatch</x:String>
+                        <x:String>Buyer Order Dispatch with Pre shipment Export Invoice</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://sq.worldfashionexchange.com/WFXBase4.0/WFXSalesASN.aspx?GUID=acbd462a-6f45-4642-b2df-ea8cd405fe7b" DesignTimeRectangle="792, 196, 145, 22" ElementType="DropDown" FriendlyName="'Buyer Order Dispatch'" FullSelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' type='' aaname='' /&gt;" Guid="e4d25962-4a5f-442f-a591-fd621cb9e91c" InformativeScreenshot="16774e8da439fbb356049382e0cf0a37.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;" SearchSteps="FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="687, 196, 100, 22" ElementType="Text" FriendlyName="'ASN Against'" FullSelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='lblASNAgainst' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='lblASNAgainst' tag='SPAN' type='' aaname='ASN Against' check:text='ASN Against' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAaCAYAAABb9hlrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQOSURBVGhD7Zets6RGFMXzb+Dixo0bhxyHa4dr2Q6Hw+FWYlJUDBVDraGiiCJVqSIxVK1o2atwOBzy5Fxg3puZ9zbZUY/Z4lSNmObSH/d3P5qfsGvT2gFtXDugjWsHtHHtgDauHdDGtQPauHZAG9cOaON6A2i0FdK0QDesA9Q0dCgTjZN3gIoy1G6SQbR5gqTocDGdhhZ5VsKO68C1ph4N7bPagW8/Ls6d6QiVrP2IphH98N6GnkN3gOj09AzPOyKu+9WRA5pEQSUVOmvRVgVKoTc5FNqjrULeLQ6YXAmjEjRXcC+SZ9qjvcrfB/h/IuCuaeEefHfsMoSmwKNct6JbQEODJDTMIMNMqdDLoeiYKgpgyrvInwGdEYQBzqacHfBtQBNsYRDGGecPka1AZbxvciQmRKgNoihGWln0rkGeRNChRpSuGcn1qrxAO0zcEp9nOX8xjImYxS04TI3oyhSRDmGSAn9++R2p9hlEZ2gTI2/fiZyN6woQnVXHUHEF52rEyqBcw25oUgQHHyarYBdPzA4r6Ni0bpARkmTc+C1Ao0WuNTONWZBrqJQO5fDUV4i4Tt506KoEwTlCaQe4mllad7C2Rcng0IVlpWqRMnhkT5PNoZjlOm/QdTXHFVI6f+S45vpVZ9G1DWzfw1YxgyhF3Tn0402IPYVeATFT6lgtpY39Rcra7Jj18ShRTWd5PytkEokroIzlrm8SqDBD0xbvAho7Ok4vpW2yxexEsRGHhnxPEmqBFaOe05bPepbTupzXDAh0vAN0mY+WLMsKppIA4RxBiKRsCWOe5scpcRMPZw7SU65+YXHXLya40uCseeDxAmj27lwGlTEIgntAdGBGsNfzeifENJrXPHo4KQ0dnJhZDUuVrBHB9xWiJEP6ACBhMFoGEgPt6NOWBj8IoMXxKqGDlgGeVBwSIv/bwVmHpTqwDErJkJ5zDUjMJRvE+X58C4i3r5QACnvx0AJAxTW+/MHMY9bkZYmqYkmS8snMLA0zeZ6EPSUP55L4XYB4Y1v2uYxJBRgE0Ivt82kBNFk2fIXkxrN0Tsbm/ekzftEHeEceWAc4HO5L3OXkcgNkpvi3GTRI+buL4KWcRfj812/QJ2YOG72RuXkjTNuvM5TjieuF0uA9nL8TkPRQX97jvs6+BAUN5OITHNmHNJKXm+nz6CWDBjbUNz10ZH+ZvyH43DGT+HtttBP7xN078s3Rs3Stf0XTSMddLhYvkvUc/vlVI8w6ulg0wvICsfxfnjvH+WUP8yIyxouAmM7riNWiaeAaq804v3d7IZA9yNibbTyBXi8JH6ChzaCOPntEhIhR70vUv2TkLtGHAhJJ9Dt+AFuJ8J3NG304oF3/rR3QxrUD2rh2QBvXDmjj2gFtWsC/4vyGA05ITtQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get ASN Against" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0de59767-ca7f-4fa1-b43b-6ffb2f0febab" InformativeScreenshot="99b1a4e0a27144c30aec084cd624985a" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange' /&gt;&lt;webctrl name='body' tag='IFRAME' /&gt;&lt;webctrl id='ddlASNAgainst' tag='SELECT' tableCol='3' tableRow='1' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Get_ASN_Against]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJnSURBVGhD1ZgxTsQwEEX3GhyHlqOAhLgGBQUFBSUFEiUU23EFCpAoEEg0FFRU1IT9K2b5mXyPnU2yuy5e8H6PPX/GSYFns8N5UzVSrAkp1oQUa0KKNSHFmrDB+f1rc3Tz1A3YIfZPzroe8YD40zRLrq8u2wE7Asx/fH0vPWK8mrMBjFsRb88P7aAtE3rjQJyEVYm/F8cH/4FbAEZh2MzjNe/EdYQFvOj99nQrp4Gc1kyQ/D6luADV2mIUtMnT4FcGRYQNlOIf9nHjFF5O9pZFTH0ayIFcyHv3+CljWkjRAdPY1JiiiLVzSDGBdQeM+UoN2leKAWOexih7SbGAoacxWiOkWMi6JoYW30KKCcywN1pqKCrY5ji+CCkmiIxG5vy8X8v7+nVZpBgQGQG+SMR7LRXf2zyQYgYuQiX286m4weaBFDNw4pQBH8Od9wVijud7IcUATo4xG7UiWOOx7cFzfj+LKUaKGSyhmbCxzbPGlK7vhRQL8CZ994bOFyPFDJwcY56DEW/O8Cbx2+b8PsVIMQEnzBni+VzBak0xUkyQMgEikyBn1NartSFSTICkPnHOmCcqNLdWIsVCIjMR666TSDFD364rxthjiRQDRu3egsH7SVGAf/AtEVi7YwI+jd5FSJHA5v6ya0zzBva00+h1FyXFP/jO1JjCPGN3QmhW0T2tFBfw7RzAbxU3BZwb47BpXvBdRyeS13oTwj7C0+AfvuvyMnXDsCd8G50YPHzXs8e2YfieFqfR8oYHBAso+nC2ADzCvPlcFcEBNt5lcOGLN2Sl8WSVSLEmpFgTUqwJKdaEFKth3vwCjAHsjvUnPaUAAAAASUVORK5CYII=" InformativeScreenshot="713bd7e787bedfdf8a9fe483f2f24b52.png" Selector="&lt;html app='chrome.exe' title='World Fashion Exchange'/&gt;" Url="https://sq.worldfashionexchange.com/wfx/Default.aspx?Type=Login&amp;blnShowNewMenu=true#" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
